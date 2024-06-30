@@ -8,13 +8,13 @@ public class Bisection {
       for (int i = 0; i < maxIter; i++) {
          c = (a + b) / 2;
          if (f.apply(c) == 0.0 || (b - a) / 2 < tol) {
-               break;
+            break;
          }
          errors.add(Math.abs((b - a) / 2));
          if (f.apply(c) * f.apply(a) > 0) {
-               a = c;
+            a = c;
          } else {
-               b = c;
+            b = c;
          }
       }
       return errors;

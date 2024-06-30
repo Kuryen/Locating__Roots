@@ -8,12 +8,12 @@ public class ModifiedSecant {
          double fx0 = f.apply(x0);
          double dfx0 = (f.apply(x0 + delta * x0) - fx0) / (delta * x0);
          if (dfx0 == 0) {
-               throw new ArithmeticException("Derivative is zero, no convergence.");
+            throw new ArithmeticException("Derivative is zero, no convergence.");
          }
          double x1 = x0 - fx0 / dfx0;
          errors.add(Math.abs((x1 - x0) / x1));
          if (Math.abs((x1 - x0) / x1) < tol) {
-               return errors;
+            return errors;
          }
          x0 = x1;
       }

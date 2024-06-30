@@ -9,12 +9,12 @@ public class NewtonRaphson {
          double fx = f.apply(x);
          double dfx = df.apply(x);
          if (dfx == 0) {
-               throw new ArithmeticException("Derivative is zero, no convergence.");
+            throw new ArithmeticException("Derivative is zero, no convergence.");
          }
          double x1 = x - fx / dfx;
          errors.add(Math.abs((x1 - x) / x1));
          if (Math.abs((x1 - x) / x1) < tol) {
-               return errors;
+            return errors;
          }
          x = x1;
       }

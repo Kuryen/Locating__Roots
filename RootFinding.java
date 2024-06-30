@@ -54,7 +54,7 @@ public class RootFinding {
    private static void writeErrorsToFile(List<Double> errors, String filename) throws IOException {
       try (FileWriter writer = new FileWriter(filename)) {
          for (int i = 0; i < errors.size(); i++) {
-               writer.write(i + "," + errors.get(i) + "\n");
+            writer.write(i + "," + errors.get(i) + "\n");
          }
       }
    }

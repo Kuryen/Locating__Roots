@@ -8,12 +8,12 @@ public class Secant {
          double fx0 = f.apply(x0);
          double fx1 = f.apply(x1);
          if (fx0 == fx1) {
-               throw new ArithmeticException("Division by zero.");
+            throw new ArithmeticException("Division by zero.");
          }
          double x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0);
          errors.add(Math.abs((x2 - x1) / x2));
          if (Math.abs((x2 - x1) / x2) < tol) {
-               return errors;
+            return errors;
          }
          x0 = x1;
          x1 = x2;
